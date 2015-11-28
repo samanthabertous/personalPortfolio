@@ -1,0 +1,318 @@
+﻿/*COLORS
+peach #e3c3a7
+light gray #d0d1d4
+purple #802657
+dark gray #8f8e92*/
+
+@font-face{
+	font-family: SlimJoe;
+	src:url("font/Slim Joe.OTF");
+}
+
+@font-face{
+	font-family: Cubano;
+	src:url("font/Cubano-Regular.OTF");
+}
+
+body{
+	background-color: #e3c3a7; 
+	font-size: .875em; /* 14px 87.5%*/ 
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height: 1em; 
+	text-align: left; 
+
+}
+
+.detailbody {
+	margin: 0 auto; 
+	width: 100%; 
+}
+
+h1 {
+	font-family: Cubano;
+	font-size: 6em; 
+	line-height: 1em;
+}
+
+p{
+	font-size: 1.0 em; 
+}
+
+/*------NAV BAR ----------*/
+.mainheader nav{
+	background-color: #FFFFFF;
+	font-size: 1.3em;
+	line-height: 30px; 
+	text-align: center;
+	width: 100%;
+	z-index: 50;
+	
+}
+
+.mainheader nav ul {
+	list-style: none;
+	margin: 0 auto; 
+	color: #802657;
+
+}
+
+.mainheader nav ul li {
+	float: left;
+	display: inline; 
+	padding-left: 3%;
+	font-family: Slim Joe, Helvetica, sans-serif; 
+	font-weight: 900;
+}
+
+.mainheader nav ul li img{
+	height:100px;
+	padding-left: 3%;
+	padding-top: 0;
+}
+
+.mainheader nav ul .nav_link{
+	padding-top: 50px;
+}
+
+.mainheader nav a:link, .mainheader nav a:visited{
+	color: #802657;; 
+	display: inline-block; 
+	height: 30px;
+	padding: 5px 23px; 
+	text-decoration: none; 
+}
+
+.mainheader nav a:hover, .mainheader nav a:active{
+	color: #8f8e92; 
+	background-color: #FFFFFF; 
+}
+
+
+.mainContent{
+	line-height: 25px; 
+	border-radius: 5px; 
+	
+}
+
+
+/*------TOP CONTENT ----------*/
+.topcontent {
+  z-index: -1;
+  position: relative;
+  height: 500px;
+}
+
+.topcontent .skew:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: visible;
+  width: 100%;
+  height: 700px;
+  background: #8f8e92;
+  border-bottom: #FFFFFF solid 10px;
+  z-index: -50;
+  -webkit-transform: skewY(-4deg);
+  -moz-transform: skewY(-4deg);
+  -ms-transform: skewY(-4deg);
+  -o-transform: skewY(-4deg);
+  transform: skewY(-4deg);
+    -webkit-backface-visibility: hidden;
+}
+
+.topcontent .skew .topcontent-inner {
+  max-width: 70%;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.topcontent h1{
+	color: #FFFFFF;
+}
+
+.topcontent h3{
+	text-align: center;
+}
+
+
+/*------JAVASCRIPT PROJECT LINKS ----------*/
+
+.JS_work{
+	text-align: center;
+	padding: 5% 0; 
+}
+
+.JS_work p{
+	font-size: 2.5em;
+	font-family: Cubano, Gotham Black, sans-serif;
+	line-height:1.2em
+}
+
+.JS_work ul{
+	list-style: none;
+}
+
+.JS_work ul li{
+	font-size: 2em;
+	
+	font-family: Slim Joe, Helvetica, sans-serif; 
+	font-weight: 900;
+	line-height: 1.2em;
+}
+
+.JS_work ul a:link, .JS_work ul a:visited{
+	color: #802657;
+	height: 30px;
+	padding: 5px 23px; 
+	text-decoration: none; 
+}
+
+.JS_work ul a:hover, .JS_work ul a:active{
+	color: #8f8e92; 
+	background-color: #FFFFFF; 
+}
+
+
+
+
+
+
+.mainfooter{
+	width: 100%;
+	margin-bottom: 2%;
+	background-color: #802657; 
+	color: #FFFFFF; 
+	padding-left:0;
+	float: left;
+	font-family: Slim Joe, Helvetica, sans-serif;
+}
+
+.mainfooter p {
+	width: 90%; 
+	margin: 2% auto;
+}
+
+#graphics_work {
+ width: 80%;
+ margin: 20px auto;
+ border: 2px solid #cccccc;
+ padding: 0 10%;
+ background-color: #FFFFFF;
+}
+
+.floated_box {
+box-sizing: border-box;
+ float: left;
+ width: 300px;
+ height: 300px;
+ border: 5px solid #802657;
+ margin: 20px;
+}
+.floated_box img{
+height: 290px; 
+}
+
+
+@media only screen and (min-width: 150px) and (max-width:830px)
+{
+	.detailbody {
+		width: 100%;
+		margin: auto; 
+		font-size: 80%; 
+	}
+	.mainheader img{
+		width: auto; 
+		height:155px;
+		padding: 20px;
+		position: relative;		
+	}
+	
+	.mainheader nav{
+		font-size: 30px; 
+		line-height: 30px; 
+		margin-bottom: 0; 
+	}
+	
+	.mainheader nav ul{
+		padding-left: 0;
+	}
+
+	.mainheader nav ul .nav_link{
+		padding: 10px 0;
+	}
+	.mainheader nav ul #nav_work{
+		margin-top: 80px;
+	}
+	
+	.mainheader nav ul li{
+		margin: 0 auto; 
+		width: 100%;
+	
+	}
+	
+	.mainheader nav a:link, .mainheader nav a:visited{
+		display: block; 
+	}
+
+	.topcontent-inner h1{
+		font-size: 65px;
+	}
+	
+	.content{
+		width: 100%;
+		padding-top: 4%;
+		float: left;
+		
+	}
+	
+	.topcontent{
+		padding: 3%;
+		margin-bottom: 2%; 
+	}
+	
+	.topcontent iframe{
+		width: 98%;
+		height: auto;
+	}
+	
+	.bottomcontent{
+		padding: 3%;
+	}
+	
+	.bottomcontent p img{
+		width: 50%; 
+		height: auto; 
+		
+	}
+
+	.mainfooter{
+		width: 100%;
+	]
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
