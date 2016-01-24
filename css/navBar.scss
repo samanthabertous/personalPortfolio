@@ -1,0 +1,128 @@
+.mainheader{
+  font-size: 1.3em;
+  position: fixed;
+  z-index: 50; 
+  width: 100%;
+    @media #{$mobileBreak}{
+     position: relative;
+     background: $darkGrey;
+    }
+
+  #header-wrapper {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 90%;
+    max-width: 1220px;
+    margin: 0 auto;
+      @media #{$mobileBreak}{
+        display: flex;
+        justify-content: center;
+        background: none;
+      }
+      @media #{$tabletBreak}{
+        flex-direction: column;
+      }
+
+    img{
+      width: 100%;
+      height: auto; 
+      padding-top: 40px;
+      padding-bottom: 10px;
+        @media #{$mobileBreak}{
+        width: 100%;
+        min-width: 170px;
+        padding-top: 20px;
+        align-content: center;
+        }
+        @media #{$tabletBreak}{
+          width: 100%;
+          min-width: 170px;
+          padding-top: 20px;
+        }
+    }
+
+    .smaller_nav_logo {
+      width: 80%;
+      transition-duration: .5s;
+      transition-timing-function: ease-in-out;
+      padding-top: 10px;
+
+    }
+
+    #primary-menu{
+      width: 100%;
+      @media #{$mobileBreak}{
+        width: 80%;
+        background: $white;
+        border-top: 1px solid $purple;
+        bottom: 0;
+        left:0;
+        padding: 0.25rem 0;
+        position: fixed;
+        width: 100%;
+
+      }
+      @media #{$tabletBreak}{
+       
+      }
+
+      ul{
+        display: flex; 
+        justify-content: flex-end;
+        list-style: none;
+        color: $purple;
+        width: 100%;
+        @media #{$mobileBreak}{
+          padding-left: 0;
+          justify-content: space-between;
+        }
+        @media #{$tabletBreak}{
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 0;
+        }
+
+        #nav_blog{
+          @media #{$mobileBreak}{
+            display: none;
+          }
+        }
+
+        li {
+          font-family: $fontSlimJoe;
+          text-decoration: none; 
+          padding-right: 3%;
+
+          .current{
+            color: dodgerblue;
+          }
+        }  
+      }
+
+      a:link, a:visited{
+        color: $purple; 
+        height: 30px;
+        text-decoration: none; 
+      }
+
+      a:hover, a:active{
+        color: $peach; 
+      }
+
+    }
+  }
+}
+
+.smaller_nav{
+  background: $white;
+  opacity: .9;
+  transition: opacity .25s ease-in-out;
+     @media #{$mobileBreak}{
+     justify-content: center;
+     opacity: 1;
+     background: $darkGrey;
+    }
+}
+

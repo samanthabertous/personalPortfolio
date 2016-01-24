@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TabbedInterface</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="author" content="Secretly Shameless" />
+	<meta name="geo.country" content="US" />
+	<meta name="dc.language" content="en" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
+	
+	<style type="text/css" media="screen">		
+		/*local styles if any (quick tests and local only overrides)*/
+		
+
+		.tab{
+			display: inline-block;
+			padding-top: 5px;
+			padding-bottom: 5px;			
+			padding-left: 10px;
+			padding-right: 10px;
+			
+			background-color: #eee;
+			
+		}
+		
+		.tab.current{
+			background-color: #CCC;
+		}
+		
+		.tab-content-container{
+			
+			border: 3px solid #CCC;
+			padding: 20px;
+		}
+		
+/*		.tab-content{
+			display: none;
+		}*/
+		
+		.tab-content.current{
+			display: block;
+		}
+
+		h1{
+			font-weight: bold;
+			font-size: 30px;
+		}
+		.instructions{
+			margin: 20px auto;
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div class="wrap" >
+		<div class= "instructions"</div>
+		<h1> RECIPES</h1>	
+		<p>Click on each tab to view the recipe</p>
+		</div>	
+		
+		<nav class="tabbed-navigation">
+			<a class="tab current" href="tab1.html">Breakfast</a>
+			<a class="tab" href="tab2.html">Lunch</a>
+			<a class="tab" href="tab3.html">Dinner</a>
+			<!--<a class="tab" href="tab4.html">Tab 4</a> -->									
+		</nav>
+		<div class="tab-content-container">
+			
+	
+								
+			
+		</div>
+
+
+		
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>!window.jQuery && document.write(unescape('%3Cscript src="assets/js/libs/jquery-1.11.0.js"%3E%3C/script%3E'))</script>
+	<script type="text/javascript" charset="utf-8">
+
+
+		$(".tab").on("click", function(event){
+			event.preventDefault();
+			var $this = $(this);
+			// Changing the look of the tabs
+			$this.siblings().removeClass("current");
+			$this.addClass("current");
+			
+			var tabToShowSelector = $this.attr("href");
+			console.log(tabToShowSelector);
+			
+
+		
+			var $tabContentToShow = $(tabToShowSelector);
+			// Changing which content is shown
+			$tabContentToShow.siblings().hide();
+			
+			$tabContentToShow.show();
+				var makeAjaxRequest = function(){
+				
+				$.ajax({
+					url: tabToShowSelector
+				}).done(function(data){
+
+					console.dir(data);
+					
+					$(".tab-content-container").html(data);
+				});
+			}
+		
+			makeAjaxRequest();
+			
+		});
+
+
+
+
+	</script>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+
+.topcontent {
+  z-index: -50;
+  background: $darkGrey;
+  position: relative; 
+
+    .skew{
+      .topcontent_inner {
+        max-width: 90%;
+        margin: 0 10%;
+      }
+      .padding{
+        padding-top: 20%;
+        @media #{$mobileBreak}{
+           padding-top: 15%;
+        }
+        @media #{$tabletBreak}{
+          padding-top: 5%;
+        }
+      }
+      .paddingSmall{
+        padding-top: 15%;
+        @media #{$mobileBreak}{
+           padding-top: 10%;
+        }
+        @media #{$tabletBreak}{
+          padding-top: 1%;
+        }
+      }
+/* HELLO SAM */
+
+
+    }
+
+    h1{
+      color: #FFFFFF;
+      font-family: $fontCubano;
+      font-size: 3.5rem; /* target px (24) / body font size (16)*/
+      line-height: 1em;
+      
+        @media #{$mobileBreak}{
+          padding: 1% 0 0 0; 
+          margin: auto 10%;
+          font-size: 3rem;
+        }
+        @media #{$tabletBreak}{
+          padding: 25% 0 0 0; 
+        }
+    }
+}

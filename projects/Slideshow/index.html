@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slideshow</title>
+	<style>
+	
+	#slideshow {
+		position: relative;
+		height: 350px;
+		
+	}
+	
+	#slideshow img {
+		position: absolute;
+		display: none;
+		height: 350px;
+	}
+	
+	#slideshow .current {
+		display: block;
+	}
+	
+	
+	#thumbnail-container img{
+
+		display: block;
+		float: left;
+		width: 100px;
+		height: auto;
+	}
+
+	.current-thumbnail{
+		border: 2px solid blue;
+	}
+
+	
+	</style>
+</head>
+<body>
+
+<div id="slideshow">
+	<img class="current" src="images/1.jpg">
+	<img src="images/2.jpg">
+	<img src="images/3.jpg">	
+	<img src="images/4.jpg">	
+	<img src="images/5.jpg">
+	<img src="images/6.jpg">	
+	<img src="images/7.jpg">		
+	<img src="images/8.jpg">			
+</div>
+<div>
+	<button id="prev">Previous</button>
+	<button id="next">Next</button>
+</div>
+
+<script type="text/javascript">
+    
+    var nextEl = document.querySelector("#next");
+    var prevEl = document.querySelector("#prev");    
+
+	var allImages = document.querySelectorAll("#slideshow img");
+	// This variable will store the index of the image we are currently looking at.
+
+
+	var showNextSlide = function(){
+		var currentElement = document.querySelector(".current");
+		var currentThumbnail = document.querySelector(".current-thumbnail");
+
+		//remove the current class from the main image and thumbnail
+		currentElement.classList.remove("current");
+		currentThumbnail.classList.remove("current-thumbnail");		
+
+		if (currentElement.nextElementSibling) {
+			// That means there is another image 
+			currentElement.nextElementSibling.classList.add("current");
+			currentThumbnail.nextElementSibling.classList.add("current-thumbnail");			
+		} else {
+			// We are at the end of the slideshow
+			// allImages[0].classList.add("current");
+			currentElement.parentElement.children[0].classList.add("current");
+			currentThumbnail.parentElement.children[0].classList.add("current-thumbnail");			
+		}
+	};
+	
+
+	var showPreviousSlide = function(){
+		var currentElement = document.querySelector(".current");
+		var currentThumbnail = document.querySelector(".current-thumbnail");
+		
+		currentElement.classList.remove("current");
+		currentThumbnail.classList.remove("current-thumbnail");	
+
+		if (currentElement.previousElementSibling) {
+			// That means there is another image 
+			currentElement.previousElementSibling.classList.add("current");
+			currentThumbnail.previousElementSibling.classList.add("current-thumbnail");	
+		} else {
+			// We are at the end of the slideshow
+			// allImages[0].classList.add("current");
+			var childImages = currentElement.parentElement.children;
+			var childThumbnail = currentThumbnail.parentElement.children;
+			childImages[childImages.length - 1 ].classList.add("current");
+			childThumbnail[childThumbnail.length - 1 ].classList.add("current-thumbnail");
+		}	
+	};	
+    
+    nextEl.addEventListener("click", showNextSlide);
+    prevEl.addEventListener("click", showPreviousSlide);
+	
+	var thumbnailContainerEl = document.createElement("div");
+	thumbnailContainerEl.id = "thumbnail-container";
+	
+	// document.querySelector("body").appendChild(thumbnailContainerEl);
+	// document.body.appendChild(thumbnailContainerEl);
+	
+	for (var i = 0; i < allImages.length; i++) {
+		
+		var newImage = document.createElement("img");
+		newImage.src = allImages[i].src;
+		thumbnailContainerEl.appendChild(newImage);
+		
+		// if (i === 0) {
+		// 	newImage.classList.add("current-thumbnail");
+		// }
+	}
+
+	thumbnailContainerEl.children[0].classList.add('current-thumbnail');
+
+	var slideshowEl = document.querySelector("#slideshow");	
+	document.body.insertBefore(thumbnailContainerEl, slideshowEl.nextElementSibling);
+
+	var thumbnail = document.querySelector('#thumbnail-container');
+
+
+	thumbnail.addEventListener("click", function(event){
+		var currentElement = document.querySelector(".current");
+		var currentThumbnail = document.querySelector(".current-thumbnail");
+		
+		if (!(event.target.classList.contains("current") || event.target.classList.contains("current-thumbnail"))){
+			currentElement.classList.remove("current");
+			currentThumbnail.classList.remove("current-thumbnail");	
+		};
+
+		for (var i = 0; i < allImages.length; i++) {
+			if (thumbnailContainerEl.children[i] === event.target){
+				allImages[i].classList.add("current");
+				thumbnailContainerEl.children[i].classList.add("current-thumbnail");
+			} 
+		}
+
+	})
+
+
+
+
+	window.addEventListener("keyup", function(event){
+		
+		if (event.keyCode === 37) {
+			//Left arrow
+			// Previous image and thumbnail
+			showPreviousSlide();
+		} else if (event.keyCode === 39) {
+			//right arrow
+			// Next image and thumbnail
+			showNextSlide();
+		} else if (event.keyCode === 32) {
+			// Spacebar
+			//returns to first image
+			document.querySelector(".current").classList.remove("current");			
+			index = 0;
+			allImages[index].classList.add("current");
+			thumbnailContainerEl.children[index].classList.add('current-thumbnail');
+
+		}
+		
+	});
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

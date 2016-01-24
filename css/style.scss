@@ -1,0 +1,276 @@
+﻿@import 'varibles';
+@import 'fonts';
+@import 'navBar';
+@import 'topContent';
+@import 'about';
+
+
+/*------GLOBAL ----------*/
+html{
+  font-size: 100%; /* 16px*/ 
+}
+
+body{
+	background-color: $white;  
+	font-family: $fontBody; 
+	line-height: 1em; 
+	text-align: left; 
+
+}
+
+.detailbody {
+	margin: 0 auto; 
+	width: 100%; 
+}
+
+
+
+
+
+
+
+
+
+/******* MY EXPERIENCE*******/
+#my_experience  {
+  z-index: -2;
+  position: relative;
+  margin-top: 100px; 
+}
+
+#my_experience .skew:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: visible;
+  width: 100%;
+  height: 100px;
+  background: #d0d1d4;
+  box-sizing: border-box;
+  border-bottom: #8f8e92 solid 10px;
+  z-index: -50;
+	-webkit-transform: skewY(4deg);
+ 	-moz-transform: skewY(4deg);
+	-ms-transform: skewY(4deg);
+	-o-transform: skewY(4deg);
+	transform: skewY(4deg);
+    -webkit-backface-visibility: hidden;
+}
+
+#experience {
+	font-family: Slim Joe, Helvetica, sans-serif; 
+	font-size: 9vw;
+	color: #8f8e92;
+	position: absolute;
+	transform: rotate(4deg);
+	opacity: .4;
+	bottom: 40px;
+	margin: 0 auto;
+}
+
+
+/*------JAVASCRIPT PROJECT LINKS ----------*/
+.work_content {
+  z-index: -2;
+  position: relative;
+  height: 600px;
+  background: #802657;
+  margin-top: 100px; 
+}
+
+.work_content .skew:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  overflow: visible;
+  width: 100%;
+  height: 200px;
+  background: #802657;
+  z-index: -50;
+	-webkit-transform: skewY(4deg);
+ 	-moz-transform: skewY(4deg);
+	-ms-transform: skewY(4deg);
+	-o-transform: skewY(4deg);
+	transform: skewY(4deg);
+    -webkit-backface-visibility: hidden;
+}
+
+
+.work_content .skew:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -100px;
+  overflow: visible;
+  width: 100%;
+  height: 200px;
+  background: #802657;
+  z-index: -50;
+	-webkit-transform: skewY(-4deg);
+ 	-moz-transform: skewY(-4deg);
+	-ms-transform: skewY(-4deg);
+	-o-transform: skewY(-4deg);
+	transform: skewY(-4deg);
+    -webkit-backface-visibility: hidden;
+}
+
+
+
+
+
+
+/* BUTTONS*/
+
+
+#github_button{
+	background: #8f8e92;
+	height: 50px;
+	width: auto;
+	margin: 7% 0 0 60%;
+	text-decoration: none;
+	border-radius: 10px;
+	font-family: Cubano, Gotham Black, sans-serif;
+	font-size: 2em;
+	color: #FFF;
+	border: none;
+	padding: 0 2%;
+}
+
+#github_button a:link, #github_button a:visited{
+	color: #FFF; 
+	display: inline-block; 
+	height: 30px;
+	text-decoration: none; 
+}
+
+
+
+/*------RESUME ----------*/
+.resume_content {
+  z-index: -3;
+  position: relative;
+  height: 700px;
+  background: #e3c3a7;
+  margin-top: 50px;
+  padding: 15% 5% 0 5%;
+}
+
+.resume_content .skew:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -60px;
+  overflow: visible;
+  width: 100%;
+  height: 200px;
+  background: #e3c3a7;
+  box-sizing: border-box;
+  border-bottom: #8f8e92 solid 10px;
+  z-index: -50;
+	-webkit-transform: skewY(4deg);
+ 	-moz-transform: skewY(4deg);
+	-ms-transform: skewY(4deg);
+	-o-transform: skewY(4deg);
+	transform: skewY(4deg);
+    -webkit-backface-visibility: hidden;
+}
+.resume_content .job{
+	max-width: 500px;
+	padding: 0;
+	margin-bottom: 5%;
+}
+
+.resume_content .job h4{
+	font-family: Cubano, Gotham Black, sans-serif;
+	color: #802657 ;
+	font-size: 1.5em;
+	margin: 0;
+}
+.resume_content .job h5{
+	font-family: SlimJoe, Helvetica, sans-serif; 
+	color: #FFF;
+	font-size: 1em;
+	line-height: 1.2em;
+	margin: 2% 0 1% 0; 
+}
+
+.resume_content .job  ul {
+	padding: .5%;
+	padding-left: 5%; 
+	color: #8f8e92;
+}
+
+.resume_content .job  ul li{
+	font-size: 1.1em;
+}
+
+.resume_content #job2, .resume_content #job4{
+	margin-left: 8%; 
+}
+
+
+/*------Blog ----------*/
+.blog_content{
+	width: 100%;
+	
+	color: #FFFFFF; 
+	padding-left:0;
+	font-family: Slim Joe, Helvetica, sans-serif;
+ 	z-index: -5;
+  	position: relative;
+  	height: 400px;
+	   top:100px;
+  	background: #802657; 
+  	padding-bottom: 4%;
+
+}
+
+
+
+
+
+/*------Footer ----------*/
+.mainfooter{
+
+
+}
+
+.mainfooter p {
+
+
+}
+
+footer{
+	height: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

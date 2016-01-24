@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ToDo_01</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="author" content="The Chopping Block, Inc." />
+	<meta name="geo.country" content="US" />
+	<meta name="dc.language" content="en" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	
+
+	
+	<style type="text/css" media="screen">		
+		/*local styles if any (quick tests and local only overrides)*/
+		
+		#tasks li{
+			list-style: none;
+		}
+		
+		#tasks .selected{
+			list-style: disc;
+		}
+		
+		.completed{
+			text-decoration: line-through;
+		}
+		h1{
+			margin: 20px;
+			font-size: 30px
+		}
+	</style>
+</head>
+<body>
+
+	<div class="wrap" >
+		<h1>To Do List</h1>
+		
+		<ol>
+			<li>You can add items to your list</li>
+			<li> Click on a task once completed</li>
+			<li>Thought you finished a task, but didn't? It's okay you can uncheck the task</li>
+		</ol>
+		
+		<div><input type="text" value="" id="new_task"><button id="add_task">Add Task</button></div>
+		
+		<ul id="tasks">
+			<li class="completed selected">One Task</li>
+			<li>Two Task</li>
+		</ul>
+		
+	</div>
+	<script type="text/javascript">
+		var addTaskButton = document.querySelector("#add_task");
+		var newTaskInput = document.querySelector("#new_task");
+		var tasksListElement = document.querySelector("#tasks");
+		var listItemElement = document.querySelectorAll("#tasks li");
+		var divEl = document.querySelector(".wrap");
+			
+		
+
+
+        var newUserTask = function () {				
+			// For any input, the value property is whatever is typed into the input
+			// at the time the property is accessed				
+			var newTask = newTaskInput.value;
+			console.log(newTask);
+			
+			// Clear the input field
+
+
+			if (newTask !== ""){
+				//add a new item to the to do list
+				var newListItem = document.createElement("li");	
+				tasksListElement.appendChild(newListItem);
+				//fill in text for the new list bracket
+				var newText = document.createTextNode(newTask);
+				newListItem.appendChild(newText);
+
+				// Clear the input field
+				newTaskInput.value = "";
+				newTaskInput.focus();	
+				completedList();
+			}				
+		
+		};
+
+		addTaskButton.addEventListener("click", newUserTask);
+		
+
+		//remove any element that has been completed
+		document.querySelector(".completed").classList.remove("completed");
+		
+		var taskCompleted = function (){
+			console.log("User clicked");
+			// add a strike through to the completed target
+			event.target.classList.toggle("completed");
+			//add indicator to selected element
+			document.querySelector(".selected").classList.remove("selected");
+			event.target.classList.add("selected");
+			completedList();
+		};
+
+
+	 	//create new h2 element
+		var newParagraph = document.createElement("h2");	
+		divEl.appendChild(newParagraph);
+		//var newParagraphText = document.createTextNode("");
+		//newParagraph.appendChild(newParagraphText);
+
+		var completedList = function (){
+
+			//Determine if the user has completed all task
+			if(listItemElement.length === document.querySelectorAll(".completed").length){	
+				//fill in text for the h2 element
+				document.querySelector("h2").innerHTML = "You have completed all tasks";
+				
+			} else {
+				//fill in text for the h2 element
+				var uncompletedTask = document.querySelectorAll("#tasks li").length -document.querySelectorAll(".completed").length;
+				document.querySelector("h2").innerHTML = "You have " + uncompletedTask + " uncompleted task left";
+
+			}
+
+		};
+
+		// Make all list items click able even all the new li items created
+		tasksListElement.addEventListener("click", taskCompleted);
+
+
+		window.addEventListener("keyup", function(event){
+
+			var selectedElement = document.querySelector(".selected");
+			if (event.keyCode === 13) {
+				//user presses enter
+				newUserTask();
+			} else if (event.keyCode === 38){
+				//user presses the up button
+				selectedElement.classList.remove("selected");
+
+				if (selectedElement.nextElementSibling) {
+					// That means there is another image 
+					selectedElement.nextElementSibling.classList.add("selected");
+				} else {
+					selectedElement.parentElement.children[0].classList.add("selected");
+				} 	
+				completedList();
+
+			} else if (event.keyCode === 40){
+				//user presses the down button
+				selectedElement.classList.remove("selected");
+
+				if (selectedElement.previousElementSibling) {
+					// That means there is another image 
+					selectedElement.previousElementSibling.classList.add("selected");
+				} else {
+					selectedElement.parentElement.children[selectedElement.parentElement.children.length - 1].classList.add("selected");
+				} 	
+				completedList();
+			
+			} else if (event.keyCode === 32){
+				//user presses the spacebar
+				selectedElement.classList.contains("selected").classList.toggle("completed");
+			}
+		});
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavascriptRockPaperScissors</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="author" content="Secretly Shameless" />
+	<meta name="geo.country" content="US" />
+	<meta name="dc.language" content="en" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
+	
+	<style type="text/css" media="screen">
+	
+	.selected {
+		border: 1px solid black;
+	}
+	</style>
+</head>
+<body>
+
+	<div class="wrap" >
+		JavascriptRockPaperScissors
+		
+	<p class="">	1) Choose your weapon</p> <!-- / -->
+			
+<p class="">		2) Then I the COMPUTER will choice my weapon</p> <!-- / -->
+			
+<p class="">		3) LET US SEE WHO WILL WIN!!!</p> <!-- / -->
+		
+
+		<div id="weapons">
+			<img class="weapon" id="paper" src="images/paper.png" width="100" height="100" alt="Paper">
+			<img class="weapon" id="rock" src="images/rock.png" width="100" height="100" alt="Rock">
+			<img class="weapon" id="scissors" src="images/scissors.png" width="100" height="100" alt="Scissors">
+		</div>
+		<img id="computer-choice" >
+		<p id="winner"></p>
+		<button id="playAgain">Play Again</button>
+	</div>
+	
+
+	<script type="text/javascript" charset="utf-8">
+		
+		var randomRange = function(low, high) {			 	
+			 return Math.round(low+((high-low)*Math.random()));				
+		}
+		var playAgainButton = document.querySelector("#playAgain");	
+		var imageElement = document.querySelector("#computer-choice");
+		var winnerElement = document.querySelector("#winner");
+				
+		var runGame = function (userChoice) {
+			var computerChoice = randomRange(0,2);
+			var imageElement = document.querySelector("#computer-choice");
+			var outputElement = document.querySelector("#winner");
+			var playAgainButton = document.querySelector("#playAgain");				
+			// 0 - paper
+			// 1 - rock
+			// 2 - scissors
+
+			if (computerChoice === 0) {
+				imageElement.src = "images/paper.png";
+			} else if (computerChoice === 1) {
+				imageElement.src = "images/rock.png";
+			} else {
+				imageElement.src = "images/scissors.png";
+			}
+			
+			// Decide who wins
+			if (userChoice === computerChoice) {
+				// User and computer tie
+				outputElement.innerHTML = "Tie"
+				
+			} else if ((userChoice === 0 && computerChoice === 1) ||
+				(userChoice === 1 && computerChoice === 2) ||
+				(userChoice === 2 && computerChoice === 0)) {
+				// User wins
+				outputElement.innerHTML = "User wins";
+			} else {
+				// computer wins
+				outputElement.innerHTML = "Computer wins";				
+			}
+			playAgainButton.focus();
+		}
+		
+		var setSelectedClass = function(element) {
+			if (document.querySelector(".selected")){
+				document.querySelector(".selected").classList.remove("selected");					
+			}
+
+			element.classList.add("selected");
+		}
+		
+		var userChoiceHandler = function (event) {	
+			console.dir(event);
+			console.dir(this);
+
+			
+			if (event.target.id === "paper") {
+				setSelectedClass(event.target);
+				runGame(0);
+			} else if (event.target.id === "rock") {
+				setSelectedClass(event.target);
+				runGame(1);	
+			} else if (event.target.id === "scissors") {
+				setSelectedClass(event.target);
+				runGame(2);
+			}
+		};
+
+		playAgainButton.onclick = function(){
+			imageElement.src = "";
+			winnerElement.innerHTML ="";
+		};
+
+		var weaponsElementsContainer = document.querySelector("#weapons");
+		
+		weaponsElementsContainer.addEventListener("click", userChoiceHandler);
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,128 @@
+<html>
+	<head>
+		
+		<style type="text/css" media="screen">
+		
+			* {
+				box-sizing: border-box;			
+			}
+		
+			.square-container {
+				width: 800px;
+				position: relative;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.square {
+				width: 40px;
+				height: 40px;
+				position: absolute;
+				border: 1px solid black;
+				transition: 1s all linear;
+
+			}
+
+			
+			
+		</style>		
+	</head>
+	<body>
+		<div class="square-container"></div>
+	
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	    <script src="http://cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+		<script type="text/javascript">
+
+
+
+
+		var $top;
+		var $left;
+			
+			for (var $left = 0; $left < 800;  $left+=40  ){
+
+				for (var $top = 0; $top < 800; $top+=40){
+
+					$(document.createElement("div"))
+					.css({
+					"top": $top,
+					"left": $left
+					})
+				.addClass("square")
+				.appendTo(".square-container");
+
+				}			
+
+			}
+
+			$(".square").each(function(index, square){
+
+				$(".square").velocity({
+    				backgroundColorRed: function() { return Math.floor(Math.random()*255)} ,
+    				backgroundColorGreen: function() { return Math.floor(Math.random()*255)},
+    				backgroundColorBlue: function() { return Math.floor(Math.random()*255)},
+    				top: function() { return Math.floor(Math.random()*800)},
+    				left: function() { return Math.floor(Math.random()*800)},	
+	    			bottom: function() { return Math.floor(Math.random()*800)},	
+	    			right: function() { return Math.floor(Math.random()*800)},	
+			 
+	    			});
+	
+		
+
+					$(".square").velocity({ 
+					
+    				  rotateZ: "-360deg",
+    				  scale: 3,
+    				  opacity:.5,
+    				  				
+						}, 1000); 	
+
+
+					$(".square").velocity({ 
+					
+    				  rotateZ: "-360deg",
+    				   opacity:.5,
+    				   scale: .5,
+						}, 1000); 
+
+
+					 $(".square:odd").velocity({ 
+					
+    				 borderRadius: "100%"
+    				
+
+						}, 1000);   				  
+		
+
+					 $(".square:even").velocity({ 
+					
+    				  borderRadius: "100%",
+    				  scale: 1,
+    				  borderRadius: "0%",
+	
+    				 			
+						}, 1000);
+
+
+					});// end of the each loop
+
+
+					
+
+
+
+
+				
+	
+
+
+
+
+
+
+</script>
+	</body>
+
+</html>
