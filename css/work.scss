@@ -1,0 +1,60 @@
+.work_content {
+  z-index: -75;
+  height: 100%;
+
+
+  .skew{
+    .JS_work{
+
+      padding-top: 20%;
+      text-align: center; 
+      ul{
+
+        color: $white;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        list-style: none;
+        text-decoration: none; 
+        li{
+          
+          a{
+
+          }
+
+           a:link, a:visited{
+            color: $white; 
+            
+          }
+
+          a:hover, a:active{
+            color: $peach; 
+            
+          } 
+        }
+      }
+    }
+
+  }
+
+}
+
+#github_button{
+  background: #8f8e92;
+  height: 100%;
+  width: auto;
+  margin: 7% 0 10% 60%;
+  text-decoration: none;
+  border-radius: 10px;
+  font-family: Cubano, Gotham Black, sans-serif;
+  font-size: 2em;
+  color: #FFF;
+  border: none;
+  padding: 2%;
+}
+
+#github_button a:link, #github_button a:visited{
+  color: #FFF; 
+  display: inline-block; 
+  height: 30px;
+  text-decoration: none; 
+}

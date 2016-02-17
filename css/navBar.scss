@@ -3,6 +3,7 @@
   position: fixed;
   z-index: 50; 
   width: 100%;
+
     @media #{$mobileBreak}{
      position: relative;
      background: $darkGrey;
@@ -54,14 +55,14 @@
     #primary-menu{
       width: 100%;
       @media #{$mobileBreak}{
-        width: 80%;
         background: $white;
-        border-top: 1px solid $purple;
+        border-top: 4px solid $purple;
         bottom: 0;
         left:0;
-        padding: 0.25rem 0;
+        padding: 0.1rem 0;
         position: fixed;
         width: 100%;
+        opacity: 1;
 
       }
       @media #{$tabletBreak}{

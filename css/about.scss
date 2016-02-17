@@ -2,18 +2,18 @@
   z-index: -1;
   position: relative;
   height: 100%;
-  background: red;
+  background: $white;
 
-  .skew:before {
-    z-index: -1;
+  &::before {
+    z-index: -2;
     content: '';
     position: absolute;
-    overflow: visible;
     width: 100%;
     left: 0;
     top: -100px;
     height: 200px;
-    background: red;
+    background: $white;
+    border-top: 4px solid $peach;
     -webkit-transform: skewY(-4deg);
     -moz-transform: skewY(-4deg);
     -ms-transform: skewY(-4deg);
@@ -22,16 +22,15 @@
     -webkit-backface-visibility: hidden;
   }
 
-  .skew:after {
-    z-index: -50;
+  &::after {
+    z-index: -2;
     content: '';
     position: absolute;
-    overflow: visible;
     width: 100%;
     left: 0;
     bottom: -80px;
     height: 200px;
-    background: red;
+    background: $white;
 
     -webkit-transform: skewY(4deg);
     -moz-transform: skewY(4deg);
@@ -42,7 +41,7 @@
   }
 /*HELLO I AM SAM*/
   .hello{
-    width: 100%;
+    width: 95%;
     height: 100px;
     position:absolute;
     transform: rotate(-4deg);
@@ -71,72 +70,85 @@
     }
   }
 
-  .skew{
 
 /*ABOUT ME*/
-    .aboutME{
+/*     .aboutME{
       transition: all 0.5s ease;
       position: absolute;
       font-family: $fontCubano;
       font-size: 3.5em;
-      color: $white;
+      color: $purple;
       transform: rotate(-4deg);
       right:40%;
-      top: -130px;
+      top: -120px;
+
 
         @media #{$mobileBreak}{
           font-size: 2.5rem;
-          top: -120px;
+          top: -105px;
         }
         @media #{$tabletBreak}{
           right: 45%;
         }
-    }
-
-    h2{
-      color:$purple;
-    }
+    } */
     
     .flex_container {
       display: flex; 
       flex-direction: row;
-      justify-content: space-between;
       width: 90%;
-      max-width: 1220px;
       margin: 0 auto;
+
+
         @media #{$mobileBreak}{
           flex-direction: column;
-          justify-content: center;
+          
         }
         @media #{$tabletBreak}{
           flex-direction: column;
         }
 
       .flex_item{
-        width:100%;
+        width: 50%;
+        @media #{$mobileBreak}{
+          width:100%;       
+        }
+        @media #{$tabletBreak}{
+          width:100%; 
+        }
         
     /*THIS IS WHAT I DO*/
         h1{
-          margin:0;
           font-size: 4rem;
           line-height: 1em;
           font-family: $fontCubano; 
-          width: 100%;
-          height: auto;
-          flex-grow: 1;
+          color: $purple;
+          margin: 0;
+          @media #{$mobileBreak}{
+            font-size: 3rem;
+            line-height: 2.5rem;       
+          }
+          @media #{$tabletBreak}{
+
+          }
         }
 
         p{
-          font-size: 1rem;
-          line-height: 1.5rem;
-          width: 100%;
-          height: auto;
-          flex-grow: 2;
+          font-size: 1.5rem;
+          line-height: 2rem;
+          color: $purple;
+          @media #{$mobileBreak}{
+            font-size: 1rem;
+            line-height: 1.25rem;
+            width:100%;       
+          }
+          @media #{$tabletBreak}{
+
+          }
+          
         }
+
 
       }
 
-    }
-
-  } 
+    } 
 }
