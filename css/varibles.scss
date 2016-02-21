@@ -1,6 +1,6 @@
 $fontSlimJoe: SlimJoe, Helvetica, sans-serif;
 $fontCubano: Cubano, Impact, sans-serif;
-$fontBody: Arial, Tahoma, sans-serif;
+$fontBody: Lato_Light, Tahoma, sans-serif;
 
 
 /*------COLORS-------*/
@@ -11,6 +11,8 @@ $darkGrey: #8f8e92;
 $white: #ffffff;
 
 /*------MEDIA QUERIES-------*/
-$mobileBreak: "only screen and (max-width:520px)";
-$tabletBreak: "only screen and (min-width: 520px) and (max-width:805px)";
+$mobileBreak: "only screen and (max-width:480px)";
+$tabletBreak: "only screen and (min-width: 481px) and (max-width:768px)";
+$desktop: "only screen and (min-width: 769px) and (max-width:1219px)";
+
 $largeDesktop: "only screen and (min-width:1220px)";

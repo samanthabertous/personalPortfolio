@@ -7,35 +7,9 @@
 <?php
 	include("inc/nav_bar.php");
 	include("inc/top_about.php");
+	include("inc/work.php");
+
 ?>
-
-
-		
-
-	
-		<section class = "work_content" id = "work">
-		<div class= "skew">	
-			<a name="work">
-				<div class= "JS_work">
-					<ul>
-						<li>
-							<a href="projects/Slideshow/index.html">Slideshow with Thumbnails</a>
-						</li>
-						<li><a href="/projects/to_do_list/indexCompleted.html" >To Do List</a></li>
-						<li><a href="projects/rock_paper_scissors/index_rockPaperScissors.html" >Rock. Paper. Scissors.</a></li>
-						<li><a href="projects/tic_tac_toe/index.html">TIC TAC TOE</a></li>
-						<li><a href="projects/velocity_animation/grid_velocity.html">Hundreds of Squares Animation with Velocity</a></li>
-						<li><a href="#">API Weather Page</a></li>
-						<li><a href="projects/tabs/index.html" >Recipe Tabs</a></li>
-					</ul> 
-				</div>
-		</div>
-
-			
-			<button id= "github_button"><a href="https://github.com/secretlyShameless"target="_blank">LOOK AT MY CODE</a></button>
-
-		</section>
-
 
 		<section id = "mainfooter">
 			<a name="contact">
@@ -48,8 +22,9 @@
 		<section>
 
 
-	<script src="js/jquery-2.1.4.min.js"></script> 
-	<script src="js/main.js" type="text/javascript"></script> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/main_navBar.js" type="text/javascript"></script> 
+	<script src="js/main_workContent.js" type="text/javascript"></script> 
 	
 </body>
 </html>

@@ -32,13 +32,11 @@
       padding-top: 40px;
       padding-bottom: 10px;
         @media #{$mobileBreak}{
-        width: 100%;
-        min-width: 170px;
-        padding-top: 20px;
-        align-content: center;
+          min-width: 170px;
+          padding-top: 20px;
+          align-content: center;
         }
         @media #{$tabletBreak}{
-          width: 100%;
           min-width: 170px;
           padding-top: 20px;
         }

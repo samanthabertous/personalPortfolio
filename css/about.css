@@ -1,20 +1,21 @@
 /*
 Error: Undefined variable: "$white".
-        on line 5 of ./css/about.scss
+        on line 6 of ./css/about.scss
 
 1: .about_content {
 2:   z-index: -1;
 3:   position: relative;
 4:   height: 100%;
-5:   background: $white;
-6: 
-7:   &::before {
-8:     z-index: -2;
-9:     content: '';
-10:     position: absolute;
+5:   width:100%;
+6:   background: $white;
+7: 
+8:   &::before {
+9:     z-index: -2;
+10:     content: '';
+11:     position: absolute;
 
 Backtrace:
-./css/about.scss:5
+./css/about.scss:6
 /Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
@@ -66,4 +67,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$white\".\A         on line 5 of ./css/about.scss\A \A 1: .about_content {\A 2:   z-index: -1;\A 3:   position: relative;\A 4:   height: 100%;\A 5:   background: $white;\A 6: \A 7:   &::before {\A 8:     z-index: -2;\A 9:     content: '';\A 10:     position: absolute;"; }
+  content: "Error: Undefined variable: \"$white\".\A         on line 6 of ./css/about.scss\A \A 1: .about_content {\A 2:   z-index: -1;\A 3:   position: relative;\A 4:   height: 100%;\A 5:   width:100%;\A 6:   background: $white;\A 7: \A 8:   &::before {\A 9:     z-index: -2;\A 10:     content: '';\A 11:     position: absolute;"; }
