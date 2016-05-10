@@ -1,22 +1,27 @@
 /*
-Error: Undefined variable: "$darkGrey".
-        on line 4 of ./css/topContent.scss
+Error: Undefined variable: "$tabletBreak".
+        on line 3 of ./css/topContent.scss
 
-1: 
-2: .topcontent {
-3:   z-index: -50;
-4:   background: $darkGrey;
-5:   position: relative;
-6: 
-7:     .skew{
-8:       .topcontent_inner {
-9:         max-width: 90%;
+1: .padding{
+2:   padding-top:15%;
+3:   @media #{$tabletBreak}{
+4:     padding-top: 25%;
+5:   }
+6:    @media #{$mobileBreak}{
+7:      padding-top: 10%;
+8:   }
 
 Backtrace:
-./css/topContent.scss:4
+./css/topContent.scss:3
 /Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
-/Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
+/Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/script/tree/interpolation.rb:170:in `_perform'
+/Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
+/Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:540:in `block in run_interp_no_strip'
+/Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:538:in `map'
+/Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:538:in `run_interp_no_strip'
+/Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:545:in `run_interp'
+/Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:510:in `visit_media'
 /Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
 /Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 /Users/Samantha/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
@@ -65,4 +70,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$darkGrey\".\A         on line 4 of ./css/topContent.scss\A \A 1: \A 2: .topcontent {\A 3:   z-index: -50;\A 4:   background: $darkGrey;\A 5:   position: relative;\A 6: \A 7:     .skew{\A 8:       .topcontent_inner {\A 9:         max-width: 90%;"; }
+  content: "Error: Undefined variable: \"$tabletBreak\".\A         on line 3 of ./css/topContent.scss\A \A 1: .padding{\A 2:   padding-top:15%;\A 3:   @media #{$tabletBreak}{\A 4:     padding-top: 25%;\A 5:   }\A 6:    @media #{$mobileBreak}{\A 7:      padding-top: 10%;\A 8:   }"; }

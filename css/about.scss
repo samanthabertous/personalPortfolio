@@ -131,6 +131,7 @@
 
         p{
           color: $purple;
+          margin: 0;
           @media #{$mobileBreak}{
             font-size: 1rem;
             line-height: 1.25rem;

@@ -2,7 +2,7 @@
 @import 'varibles';
 @import 'fonts';
 @import 'navBar';
-@import 'topContent';
+@import 'topContent'; 
 @import 'about';
 @import 'work';
 
@@ -21,7 +21,8 @@ html{
 }
 
 body{
-	background-color: $purple;  
+	background-color: $purple; 
+
 }
 
 h1{

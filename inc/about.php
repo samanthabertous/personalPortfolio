@@ -1,13 +1,3 @@
-<section id="topcontent" class = "topcontent">
-	<a name="home">
-	<div class= "skew">
-		<div class="topcontent_inner">
-			<h1> WHERE IDEAS COME TO LIFE... ON THE WEB </h1>
-		</div>
-	</div>
-</section>
-
-
 <section id="about_content" class = "about_content">   
 	<a name="about"> 
 			<div class = "hello">

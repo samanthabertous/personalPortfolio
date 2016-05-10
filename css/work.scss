@@ -1,62 +1,62 @@
 .work_section {
   z-index: -75;
   height: 100%;
-  color: $white;
+
 
   h1{
     text-align: center;
   }
 
   .work_title1{
-    padding: 15% 0 5% 0; 
+    padding-top: 15%; 
   }
 
+  #graphic_work,
   #front_work{
+    max-width: $large-content-width;
+    display: flex;
+    flex-wrap:wrap;
+    margin: 5% auto;
+    background: blue;
+    flex-direction: row;
+    justify-content: center;
 
-    .works{
-      display: inline-block;
-      background: red;
-      font-size:45px;
-    }
 
-    .current{
-      background: blue;
-    }
-  }
+  
+    .front_image{
+        padding: 1%;
 
-  .work-content-container{
-    .frontend_work{
-      max-width: 1220px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
+         @media #{"only screen and (min-width: 930px) and (max-width:1740px)"}{
 
-      @media #{$mobileBreak}{
-        flex-direction: column;
-      }
-      @media #{$tabletBreak}{
-        flex-direction: column;
-      }
-
-      .description{
-        flex: 1;
-        h3{
-          margin: 0;
+         }
+         @media #{$largeDesktop}{
+          width: 30%;
         }
+        @media #{"only screen and (min-width: 645px) and (max-width:1219px)"}{
+          width: 45%;
+        }
+
+        @media #{"only screen and (max-width: 645px)"}{
+          width: 95%;
+        }
+
+    }
+    
+      h3{
+        display: none;
       }
 
+      img{
+        width:100%;
+        height: auto;
 
-      .image{
-        flex: 2;
-        img{
-          width: 100%;
-          height: auto;
-        }
+
       }
       
     }
-  }
+
+
+  
 }
 
 #github_{
@@ -70,7 +70,7 @@
   margin: 7% 0 10% 60%;
   text-decoration: none;
   border-radius: 10px;
-  font-family: Cubano, Gotham Black, sans-serif;
+  font-family: $fontLuna;
   font-size: 2em;
   color: #FFF;
   border: none;

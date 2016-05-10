@@ -1,10 +1,9 @@
 //global variables for nav bar
 $nav = $('.mainheader');
 $navBar = $('#header-wrapper');
-$navImage = $('.mainheader #header-wrapper .header-logo a img');
+$navImage = $('.mainheader #header-wrapper h1 a');
 $sections = $('section');
 $navLinks = $('#header-wrapper #primary-menu ul li a');
-$topcontent = $('.topcontent .skew .topcontent_inner')
 var $mainNavHeight = ($navBar[0].getBoundingClientRect().height);
 
 
@@ -24,6 +23,7 @@ $sections.each(function(index, element){
   });
 });
 
+var position, direction, previous; 
 
 /*----------SCROLL FUNCTIONS---------------*/
 /*----------SCROLL FUNCTIONS---------------*/
@@ -33,18 +33,19 @@ $(document).on("scroll", function(){
   //nav bar animates smaller w/ white except on moblie
   //hide and show "about me"
     
-      if (scrollTop > 10) {
-        if($(window).innerWidth() > 520){
-          $navImage.addClass('smaller_nav_logo');
-          $nav.addClass('smaller_nav');
-        }
-        $('#about_content .skew h2').addClass("aboutME");
-      } else {
+      if (scrollTop < 10) {
         if($(window).innerWidth() > 520){
           $navImage.removeClass('smaller_nav_logo');
           $nav.removeClass('smaller_nav');
         }
         $('#about_content .skew h2').removeClass("aboutME");
+       
+      } else {
+        if($(window).innerWidth() > 520){
+          $navImage.addClass('smaller_nav_logo');
+          $nav.addClass('smaller_nav');
+        }
+        $('#about_content .skew h2').addClass("aboutME");
       }
     
 
@@ -61,30 +62,28 @@ $(document).on("scroll", function(){
       }
     });
   }
+//Hide and Show Menu toggle bar on scroll
+  if ( $(this).scrollTop() <= position ){
+    direction = 'up';
+    if ( direction !== previous ){
+      $('#primary-menu').removeClass('hide');
+
+      previous = direction;
+    }
+  } else {
+    direction = 'down'
+    if ( direction !== previous ){
+      $('#primary-menu').addClass('hide');
+
+      previous = direction;
+    }
+  }
+  position = $(this).scrollTop();
           
 });
 
 
-// .topcontent height to match to the window inner height
-// whatever screen the user is on the home div will fill the screen 
-$(document).ready(function() {
-  var setHeight = function() {
-    $windowHeight = $(window).innerHeight();
-    $('.topcontent').css("min-height", $windowHeight);
-    if ($windowHeight < 550) {
-      $topcontent.addClass("paddingSmall");
-      $topcontent.removeClass("padding")
-    }else{
-      $topcontent.addClass("padding");
-      $topcontent.removeClass("paddingSmall");
-    }
-  };
-  setHeight();
-  
-  $(window).resize(function() {
-    setHeight();
-  });
-});
+
 
 
 

@@ -3,6 +3,7 @@
   position: fixed;
   z-index: 50; 
   width: 100%;
+  top: 0;
 
     @media #{$mobileBreak}{
      position: relative;
@@ -15,10 +16,9 @@
     flex-wrap: nowrap;
     align-items: center;
     width: 90%;
-    max-width: 1220px;
+    max-width: $content-width;
     margin: 0 auto;
       @media #{$mobileBreak}{
-        display: flex;
         justify-content: center;
         background: none;
       }
@@ -26,19 +26,26 @@
         flex-direction: column;
       }
 
-    img{
+    h1{
+      font-family: $fontLuna;
+      font-size: 24px;
+      line-height:36px;
       width: 100%;
-      height: auto; 
-      padding-top: 40px;
-      padding-bottom: 10px;
+      margin:3% auto;
+
+
+      a,
+      a:link, a:visited{
+        text-decoration: none;
+        color: $peach;
+      }
+
         @media #{$mobileBreak}{
-          min-width: 170px;
-          padding-top: 20px;
-          align-content: center;
+          text-align: center;
         }
         @media #{$tabletBreak}{
-          min-width: 170px;
-          padding-top: 20px;
+          text-align:center;
+          padding-top:10px;
         }
     }
 
@@ -46,7 +53,13 @@
       width: 80%;
       transition-duration: .5s;
       transition-timing-function: ease-in-out;
-      padding-top: 10px;
+      padding-top: 10px; 
+    }
+
+    .hide{
+      @media #{$mobileBreak}{
+        bottom:-4em !important;
+      }
 
     }
 
@@ -59,9 +72,8 @@
         left:0;
         padding: 0.1rem 0;
         position: fixed;
-        width: 100%;
         opacity: 1;
-
+        transition: all ease-out 400ms;
       }
       @media #{$tabletBreak}{
        
@@ -74,13 +86,18 @@
         color: $purple;
         width: 100%;
         @media #{$mobileBreak}{
-          padding-left: 0;
           justify-content: space-between;
+          font-size: 16px;
         }
         @media #{$tabletBreak}{
           flex-direction: row;
           justify-content: space-between;
-          padding: 0;
+          font-size: 20px;
+          
+        }
+
+        #emptyLink{
+          display: none;
         }
 
         #nav_blog{

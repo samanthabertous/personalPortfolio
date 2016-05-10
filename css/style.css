@@ -1,4 +1,5 @@
 @import url(normalize.css);
+/*------SIZE-------*/
 /*------COLORS-------*/
 /*------MEDIA QUERIES-------*/
 @font-face {
@@ -17,7 +18,8 @@
   font-size: 1.3em;
   position: fixed;
   z-index: 50;
-  width: 100%; }
+  width: 100%;
+  top: 0; }
   @media only screen and (max-width: 480px) {
     .mainheader {
       position: relative;
@@ -28,35 +30,40 @@
     flex-wrap: nowrap;
     align-items: center;
     width: 90%;
-    max-width: 1220px;
+    max-width: 1450px;
     margin: 0 auto; }
     @media only screen and (max-width: 480px) {
       .mainheader #header-wrapper {
-        display: flex;
         justify-content: center;
         background: none; } }
-    @media only screen and (min-width: 481px) and (max-width: 768px) {
+    @media only screen and (min-width: 481px) and (max-width: 1087px) {
       .mainheader #header-wrapper {
         flex-direction: column; } }
-    .mainheader #header-wrapper img {
+    .mainheader #header-wrapper h1 {
+      font-family: Luna, Tahoma, sans-serif;
+      font-size: 24px;
+      line-height: 36px;
       width: 100%;
-      height: auto;
-      padding-top: 40px;
-      padding-bottom: 10px; }
+      margin: 3% auto; }
+      .mainheader #header-wrapper h1 a,
+      .mainheader #header-wrapper h1 a:link, .mainheader #header-wrapper h1 a:visited {
+        text-decoration: none;
+        color: #e3c3a7; }
       @media only screen and (max-width: 480px) {
-        .mainheader #header-wrapper img {
-          min-width: 170px;
-          padding-top: 20px;
-          align-content: center; } }
-      @media only screen and (min-width: 481px) and (max-width: 768px) {
-        .mainheader #header-wrapper img {
-          min-width: 170px;
-          padding-top: 20px; } }
+        .mainheader #header-wrapper h1 {
+          text-align: center; } }
+      @media only screen and (min-width: 481px) and (max-width: 1087px) {
+        .mainheader #header-wrapper h1 {
+          text-align: center;
+          padding-top: 10px; } }
     .mainheader #header-wrapper .smaller_nav_logo {
       width: 80%;
       transition-duration: .5s;
       transition-timing-function: ease-in-out;
       padding-top: 10px; }
+    @media only screen and (max-width: 480px) {
+      .mainheader #header-wrapper .hide {
+        bottom: -4em !important; } }
     .mainheader #header-wrapper #primary-menu {
       width: 100%; }
       @media only screen and (max-width: 480px) {
@@ -67,8 +74,8 @@
           left: 0;
           padding: 0.1rem 0;
           position: fixed;
-          width: 100%;
-          opacity: 1; } }
+          opacity: 1;
+          transition: all ease-out 400ms; } }
       .mainheader #header-wrapper #primary-menu ul {
         display: flex;
         justify-content: flex-end;
@@ -77,13 +84,15 @@
         width: 100%; }
         @media only screen and (max-width: 480px) {
           .mainheader #header-wrapper #primary-menu ul {
-            padding-left: 0;
-            justify-content: space-between; } }
-        @media only screen and (min-width: 481px) and (max-width: 768px) {
+            justify-content: space-between;
+            font-size: 16px; } }
+        @media only screen and (min-width: 481px) and (max-width: 1087px) {
           .mainheader #header-wrapper #primary-menu ul {
             flex-direction: row;
             justify-content: space-between;
-            padding: 0; } }
+            font-size: 20px; } }
+        .mainheader #header-wrapper #primary-menu ul #emptyLink {
+          display: none; }
         @media only screen and (max-width: 480px) {
           .mainheader #header-wrapper #primary-menu ul #nav_blog {
             display: none; } }
@@ -110,46 +119,60 @@
       opacity: 1;
       background: #8f8e92; } }
 
+.padding {
+  padding-top: 15%; }
+  @media only screen and (min-width: 481px) and (max-width: 1087px) {
+    .padding {
+      padding-top: 25%; } }
+  @media only screen and (max-width: 480px) {
+    .padding {
+      padding-top: 10%; } }
+
 .topcontent {
   z-index: -50;
   background: #8f8e92;
   position: relative; }
-  .topcontent .skew {
-    /* HELLO SAM */ }
-    .topcontent .skew .topcontent_inner {
-      max-width: 90%;
-      margin: 0 10%; }
-    .topcontent .skew .padding {
-      padding-top: 20%; }
-      @media only screen and (max-width: 480px) {
-        .topcontent .skew .padding {
-          padding-top: 15%; } }
-      @media only screen and (min-width: 481px) and (max-width: 768px) {
-        .topcontent .skew .padding {
-          padding-top: 5%; } }
-    .topcontent .skew .paddingSmall {
-      padding-top: 15%; }
-      @media only screen and (max-width: 480px) {
-        .topcontent .skew .paddingSmall {
-          padding-top: 10%; } }
-      @media only screen and (min-width: 481px) and (max-width: 768px) {
-        .topcontent .skew .paddingSmall {
-          padding-top: 1%; } }
-  .topcontent h1 {
-    color: #FFFFFF;
-    font-family: Cubano, Impact, sans-serif;
-    font-size: 3.5rem;
-    /* target px (24) / body font size (16)*/
-    line-height: 1em; }
-    @media only screen and (max-width: 480px) {
-      .topcontent h1 {
-        padding: 1% 0 0 0;
-        margin: auto 10%;
-        font-size: 3rem; } }
-    @media only screen and (min-width: 481px) and (max-width: 768px) {
-      .topcontent h1 {
-        padding: 25% 0 0 0; } }
+  .topcontent .topcontent_inner {
+    width: 90%;
+    max-width: 1450px;
+    margin: 0 auto; }
+    .topcontent .topcontent_inner h1 {
+      margin: 0; }
 
+/**/
+/*   
+    @media only screen and (min-width: 481px) and (max-width:1087px){
+      padding-top: 5%;
+    }
+  }
+
+  .paddingSmall{
+    padding-top: 15%;
+    @media only screen and (max-width:480px){
+       padding-top: 10%;
+    }
+    @media only screen and (min-width: 481px) and (max-width:1087px){
+      padding-top: 1%;
+    }
+  } */
+/*WHERE IDEAS COME TO LIFE... ON THE WEB*/
+/*   h1{
+    color: #FFFFFF;
+    font-family: $fontCubano;
+    font-size: 3.5rem; /* target px (24) / body font size (16)*/
+    /*line-height: 1em;
+    
+      @media only screen and (max-width:480px){
+        padding: 1% 0 0 0; 
+        margin: auto 10%;
+        font-size: 3rem;
+      }
+      @media only screen and (min-width: 481px) and (max-width:1087px){
+        padding: 25% 0 0 0; 
+      }
+  } 
+
+}*/
 .about_content {
   z-index: -1;
   position: relative;
@@ -173,7 +196,7 @@
             font-size: 2.5rem;
             top: -105px;
           }
-          @media only screen and (min-width: 481px) and (max-width:768px){
+          @media only screen and (min-width: 481px) and (max-width:1087px){
             right: 45%;
           }
       } */ }
@@ -228,10 +251,10 @@
           right: 1%;
           bottom: 15px;
           font-size: 2rem; } }
-      @media only screen and (min-width: 481px) and (max-width: 768px) {
+      @media only screen and (min-width: 481px) and (max-width: 1087px) {
         .about_content .hello h3 {
           right: 5%; } }
-      @media only screen and (min-width: 1220px) {
+      @media only screen and (min-width: 1220px) and (max-width: 1740px) {
         .about_content .hello h3 {
           right: 15%; } }
   .about_content .flex_container {
@@ -245,7 +268,7 @@
     @media only screen and (max-width: 480px) {
       .about_content .flex_container {
         flex-direction: column; } }
-    @media only screen and (min-width: 481px) and (max-width: 768px) {
+    @media only screen and (min-width: 481px) and (max-width: 1087px) {
       .about_content .flex_container {
         flex-direction: column; } }
     .about_content .flex_container .flex_item {
@@ -259,7 +282,8 @@
             font-size: 3rem;
             line-height: 2.5rem; } }
       .about_content .flex_container .flex_item p {
-        color: #802657; }
+        color: #802657;
+        margin: 0; }
         @media only screen and (max-width: 480px) {
           .about_content .flex_container .flex_item p {
             font-size: 1rem;
@@ -268,39 +292,42 @@
 
 .work_section {
   z-index: -75;
-  height: 100%;
-  color: #ffffff; }
+  height: 100%; }
   .work_section h1 {
     text-align: center; }
   .work_section .work_title1 {
-    padding: 15% 0 5% 0; }
-  .work_section #front_work .works {
-    display: inline-block;
-    background: red;
-    font-size: 45px; }
-  .work_section #front_work .current {
-    background: blue; }
-  .work_section .work-content-container .frontend_work {
-    max-width: 1220px;
+    padding-top: 15%; }
+  .work_section #graphic_work,
+  .work_section #front_work {
+    max-width: 2000px;
     display: flex;
+    flex-wrap: wrap;
+    margin: 5% auto;
+    background: blue;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start; }
-    @media only screen and (max-width: 480px) {
-      .work_section .work-content-container .frontend_work {
-        flex-direction: column; } }
-    @media only screen and (min-width: 481px) and (max-width: 768px) {
-      .work_section .work-content-container .frontend_work {
-        flex-direction: column; } }
-    .work_section .work-content-container .frontend_work .description {
-      flex: 1; }
-      .work_section .work-content-container .frontend_work .description h3 {
-        margin: 0; }
-    .work_section .work-content-container .frontend_work .image {
-      flex: 2; }
-      .work_section .work-content-container .frontend_work .image img {
-        width: 100%;
-        height: auto; }
+    justify-content: center; }
+    .work_section #graphic_work .front_image,
+    .work_section #front_work .front_image {
+      padding: 1%; }
+      @media only screen and (min-width: 1220px) and (max-width: 1740px) {
+        .work_section #graphic_work .front_image,
+        .work_section #front_work .front_image {
+          width: 30%; } }
+      @media only screen and (min-width: 645px) and (max-width: 1219px) {
+        .work_section #graphic_work .front_image,
+        .work_section #front_work .front_image {
+          width: 45%; } }
+      @media only screen and (max-width: 645px) {
+        .work_section #graphic_work .front_image,
+        .work_section #front_work .front_image {
+          width: 95%; } }
+    .work_section #graphic_work h3,
+    .work_section #front_work h3 {
+      display: none; }
+    .work_section #graphic_work img,
+    .work_section #front_work img {
+      width: 100%;
+      height: auto; }
 
 #github_ {
   z-index: 50; }
@@ -312,7 +339,7 @@
   margin: 7% 0 10% 60%;
   text-decoration: none;
   border-radius: 10px;
-  font-family: Cubano, Gotham Black, sans-serif;
+  font-family: Luna, Tahoma, sans-serif;
   font-size: 2em;
   color: #FFF;
   border: none;
