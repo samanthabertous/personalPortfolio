@@ -3,6 +3,8 @@
 
 	<head>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="https://use.fontawesome.com/0f4240ebf8.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,300,900' rel='stylesheet' type='text/css'>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="author" content="Samantha Bertous" />
@@ -14,7 +16,7 @@
 		<title>Samantha Bertous</title>
 	</head>
 <body>
-
+<?php include_once("analyticstracking.php") ?>
 <header class = "mainheader">
 	<div id = "header-wrapper">
 			<!-- Logo ===================================-->
@@ -25,10 +27,9 @@
 			<!-- PRIMARY NAVIGATION =====================-->
 			<nav role="navigation" id ="primary-menu">
 				<ul>
-					<li id="emptyLink"><a></a></li>
 					<li class= "nav_link" id = "nav_about"><a href="#about">About</a></li>
 					<li class= "nav_link" id = "nav_work"><a href="#work">Work</a></li>
-					<li class= "nav_link" id = "nav_about"><a href="https://www.linkedin.com/in/samanthabertous">Resume</a></li>
+					<li class= "nav_link" id = "nav_about"><a href="https://github.com/samanthabertous">Github</a></li>
 					<li class= "nav_link" id = "nav_blog"><a href= "#blog">Blog</a></li>
 					<li class= "nav_link"><a href= "#contact">Contact</a></li>
 				</ul>

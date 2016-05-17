@@ -51,7 +51,7 @@ $(document).on("scroll", function(){
 
 // highlight nav components when user gets to each content section
    
-  if ($(window).height() + scrollTop === $(document).height()){
+/*  if ($(window).height() + scrollTop === $(document).height()){
     $navLinks.removeClass("current");
     $navLinks.last().addClass("current");  
   } else {
@@ -61,7 +61,7 @@ $(document).on("scroll", function(){
         $navLinks.eq(index).addClass("current");          
       }
     });
-  }
+  }*/
 //Hide and Show Menu toggle bar on scroll
   if ( $(this).scrollTop() <= position ){
     direction = 'up';

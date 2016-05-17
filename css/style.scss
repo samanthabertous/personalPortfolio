@@ -1,10 +1,11 @@
 ﻿@import 'normalize.css';
-@import 'varibles';
 @import 'fonts';
+@import 'varibles';
 @import 'navBar';
 @import 'topContent'; 
 @import 'about';
 @import 'work';
+@import 'footer';
 
 
 
@@ -106,121 +107,6 @@ p{
 
 
 
-
-/*------RESUME ----------*/
-.resume_content {
-  z-index: -3;
-  position: relative;
-  height: 700px;
-  background: #e3c3a7;
-  margin-top: 50px;
-  padding: 15% 5% 0 5%;
-}
-
-.resume_content .skew:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -60px;
-  overflow: visible;
-  width: 100%;
-  height: 200px;
-  background: #e3c3a7;
-  box-sizing: border-box;
-  border-bottom: #8f8e92 solid 10px;
-  z-index: -50;
-	-webkit-transform: skewY(4deg);
- 	-moz-transform: skewY(4deg);
-	-ms-transform: skewY(4deg);
-	-o-transform: skewY(4deg);
-	transform: skewY(4deg);
-    -webkit-backface-visibility: hidden;
-}
-.resume_content .job{
-	max-width: 500px;
-	padding: 0;
-	margin-bottom: 5%;
-}
-
-.resume_content .job h4{
-	font-family: Cubano, Gotham Black, sans-serif;
-	color: #802657 ;
-	font-size: 1.5em;
-	margin: 0;
-}
-.resume_content .job h5{
-	font-family: SlimJoe, Helvetica, sans-serif; 
-	color: #FFF;
-	font-size: 1em;
-	line-height: 1.2em;
-	margin: 2% 0 1% 0; 
-}
-
-.resume_content .job  ul {
-	padding: .5%;
-	padding-left: 5%; 
-	color: #8f8e92;
-}
-
-.resume_content .job  ul li{
-	font-size: 1.1em;
-}
-
-.resume_content #job2, .resume_content #job4{
-	margin-left: 8%; 
-}
-
-
-/*------Blog ----------*/
-.blog_content{
-	width: 100%;
-	
-	color: #FFFFFF; 
-	padding-left:0;
-	font-family: Slim Joe, Helvetica, sans-serif;
- 	z-index: -5;
-  	position: relative;
-  	height: 400px;
-	   top:100px;
-  	background: #802657; 
-  	padding-bottom: 4%;
-
-}
-
-
-
-
-
-/*------Footer ----------*/
-#mainfooter{
-  z-index: 1000;
-  height: 100%;
-  background:$peach;
-  position:relative;
-    footer{
-      p{
-        text-align: center;
-        color: $darkGrey;
-        font-size: 1.5rem;
-        line-height: 2rem;
-        margin-top: 0;
-        padding-bottom:10%;
-        @media #{$mobileBreak}{
-           padding-bottom: 20%;
-        }
-      }
-  }
-
-}
-
-.mainfooter p {
-
-
-}
-
-footer{
-	height: 0;
-}
 
 
 

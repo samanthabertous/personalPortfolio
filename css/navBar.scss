@@ -70,7 +70,7 @@
         border-top: 4px solid $purple;
         bottom: 0;
         left:0;
-        padding: 0.1rem 0;
+       // padding: 0.1rem 0;
         position: fixed;
         opacity: 1;
         transition: all ease-out 400ms;
@@ -85,6 +85,7 @@
         list-style: none;
         color: $purple;
         width: 100%;
+        padding:0;
         @media #{$mobileBreak}{
           justify-content: space-between;
           font-size: 16px;
@@ -111,9 +112,17 @@
           text-decoration: none; 
           padding-right: 3%;
 
-          .current{
-            color: dodgerblue;
+          @media #{$mobileBreak}{
+            padding: 0;
           }
+          @media #{$tabletBreak}{
+            padding:0;            
+          }
+
+
+/*           .current{
+            color: dodgerblue;
+          } */
         }  
       }
 

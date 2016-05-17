@@ -4,7 +4,7 @@ $projectGallery = array(
     'src' => 'projects/rock_paper_scissors/images/rock_paper_scissor_thumbnail.png',
     'href'=> 'projects/rock_paper_scissors/index_rockPaperScissors.html',
     'alt'=> 'javascript_rockPaperScissorGame',
-    'name'=> 'Rock Paper Scissors'
+    'name'=> 'Rock Paper Scissors',
   ),
   'slideshow' => array(
     'src'=>  'projects/Slideshow/images/test.png',
@@ -36,13 +36,61 @@ $projectGallery = array(
     'alt'=> '',
     'name'=> 'Square Animations using Velocity.js library'
   ),
-  'blogGallery'=> array(
+  'WeatherUndergroundAPI'=>array(
+    'src'=>  'projects/weather_underground_API/images/test.png',
+    'href'=> 'projects/weather_underground_API/index.html',
+    'alt'=> 'weather_underground_API',
+    'name'=> 'Weather App'
+  ),
+/*  'blogGallery'=> array(
     'src'=>  'projects/velocity_animation/images/test.png',
     'href'=> 'projects/',
     'alt'=> '',
     'name'=> 'Wordpress Site with Image Gallery'
+  )*/
+)
+?>
+
+<?php
+$graphicsGallery = array(
+  'wiredMagazine' => array(
+    'src' => 'projects/design_images/wired-magazine-page1-thumbnail.png',
+    'href'=> 'projects/design_images/wired-magazine-page1.jpg',
+    'alt'=> 'Wired_Magazine',
+    'name'=> 'First Page of a Magazine Article',
+  ),
+  'multivision' => array(
+    'src' => 'projects/design_images/MultiVisionDigital-infographic-thumbnail.png',
+    'href'=> 'projects/design_images/MultiVisionDigital-infographic.jpg',
+    'alt'=> 'MultiVisionDigital-infographic',
+    'name'=> 'Infographic',
+  ),
+  'legIllustration' => array(
+    'src' => 'projects/design_images/leg-illustration-thumbnail.png',
+    'href'=> 'projects/design_images/leg-illustration.jpg',
+    'alt'=> 'leg-illustration-art',
+    'name'=> 'Illustration Art',
+  ),
+  'naturallyCurly' => array(
+    'src' => 'projects/design_images/naturally-curly-container-thumbnail.png',
+    'href'=> 'projects/design_images/naturally-curly-container.jpg',
+    'alt'=> 'naturally-curly-container',
+    'name'=> 'Product Design',
+  ),
+  'skypeStationary' => array(
+    'src' => 'projects/design_images/skype-stationary-thumbnail.png',
+    'href'=> 'projects/design_images/skype-stationary.jpg',
+    'alt'=> 'skype-stationary-logo-recreation',
+    'name'=> 'Logo Recreation',
+  ),
+  'trapezeArtist' => array(
+    'src' => 'projects/design_images/trapeze-artist-thumbnail.png',
+    'href'=> 'projects/design_images/trapeze-artist',
+    'alt'=> 'trapeze-artist',
+    'name'=> 'Book Cover Art',
   )
 )
+
 ?>
 
 <section class = "work_section">
@@ -54,11 +102,12 @@ $projectGallery = array(
     <?php 
 
     foreach($projectGallery as $project){
+
       echo '<div class=front_image>';
-     // echo '<h3>' . $project["name"] . '</h3>';
-      echo '<a href='. $project['href'] .'>';
+      echo '<a target="_blank" href='. $project['href'] .'>';
       echo '<img src=' . $project['src'] . ' alt=' . $project['alt'] . '/>';
       echo '</a>';
+      echo '<p>'.$project['name'].'</p>';
       echo '</div>';
     }
 
@@ -70,14 +119,27 @@ $projectGallery = array(
 
   <h1 class="work_title2">Graphic Design</h1>
   <div id="graphic_work">
-  
+    
+    <?php 
+
+    foreach($graphicsGallery as $project){
+
+      echo '<div class="graphic_image">';
+      echo '<a href='. $project['href'] .'>';
+      echo '<img src=' . $project['src'] . ' alt=' . $project['alt'] . '/>';
+      echo '</a>';
+      echo '<p class="imgDescription">'.$project['name'].'</p>';
+      echo '</div>';
+    }
+
+    ?> 
 
   </div>
 
    
         
       
-      <button id= "github_button"><a href="https://github.com/samanthabertous"target="_blank">LOOK AT MY CODE</a></button>
+      <!--<button id= "github_button"><a href="https://github.com/samanthabertous"target="_blank">LOOK AT MY CODE</a></button>-->
 
     </section>
 

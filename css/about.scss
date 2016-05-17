@@ -56,12 +56,12 @@
       bottom: 18px;
       margin: 0;
       position: absolute;
-        @media #{$mobileBreak}{
+        @media #{"only screen and (max-width:655px)"}{
           right:1%;
           bottom: 15px;
-          font-size: 2rem;
+          font-size: 1.75rem;
         }
-        @media #{$tabletBreak}{
+        @media #{"only screen and (min-width: 655px) and (max-width:1087px)"}{
           right: 5%;
         }
         @media #{$largeDesktop}{
@@ -98,7 +98,7 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
-      max-width: 1220px;
+      max-width: $content-width;
       padding: 5%;
       margin: 0 auto;
       
@@ -112,17 +112,24 @@
           flex-direction: column;
         }
 
-      .flex_item{
-        flex: 1;
 
+        #title{
+          margin-right: 2%;
+        }
+        #what_i_do{
+          margin-left:2%;
+        }
+      .flex_item{
+          text-align: center;
         
     /*THIS IS WHAT I DO*/
         h1{
           color: $purple;
           margin: 0;
           @media #{$mobileBreak}{
-            font-size: 3rem;
-            line-height: 2.5rem;       
+            font-size: 2.75rem;
+            line-height: 2.5rem; 
+            margin: 5% auto;      
           }
           @media #{$tabletBreak}{
 

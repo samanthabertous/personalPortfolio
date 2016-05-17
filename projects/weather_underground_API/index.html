@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>WeatherUndergroundAPI</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="author" content="The Chopping Block, Inc." />
+	<meta name="geo.country" content="US" />
+	<meta name="dc.language" content="en" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
+	
+	<style type="text/css" media="screen">		
+		/*local styles if any (quick tests and local only overrides)*/
+	</style>
+</head>
+<body>
+
+	<div class="wrap" >
+		<h2 class="title">Project: WeatherUndergroundAPI</h2> <!-- / -->
+		<a href="http://api.wunderground.com/weather/api/">http://api.wunderground.com/weather/api/</a><br>
+		<a href="http://www.wunderground.com/weather/api/d/docs?d=data/index">http://www.wunderground.com/weather/api/d/docs?d=data/index</a>
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+	
+	<script type="text/javascript" charset="utf-8">
+		
+	
+		var makeAjaxRequest = function(){
+			// 'http://api.wunderground.com/api/847908abd23613f7/conditions/q/CA/San_Francisco.json?callback=myCallbackFunction'
+			
+			$.ajax({
+				url: 'http://api.wunderground.com/api/847908abd23613f7/forecast/q/CT/Stratford.json',
+				dataType: "jsonp"
+			}).done(function(data){
+				
+				console.dir(data);
+				var $wrap= $(".wrap");
+				//$wrap.append("Low Tomorrow");
+				//$wrap.append(data.forecast.simpleforecast.forecastday[0].low.celsius)
+				var forecastday = data.forecast.simpleforecast.forecastday;
+
+				$("a").hide();
+				
+				$(".title").css({
+					"padding":"1%",
+					"font-size":"3em",
+				})
+
+				for (var day = 0; day < forecastday.length; day++){
+					//make a div to hold all the elements
+					var $dayContainer = $(document.createElement("div")).addClass("weather");
+					$wrap.append($dayContainer);
+					
+					$(".weather").css({
+						"padding":"2% 10%",
+					})
+
+					// add the date
+					var $weekDayElement = $(document.createElement("h2"));
+					var date = forecastday[day].date;
+					$dayContainer.append($weekDayElement);
+					$weekDayElement.append(date.weekday + "<br/>" +date.monthname_short + " " + date.day);
+					$weekDayElement.css({
+						"font-size": "2em",
+						"display":"inline",
+						"padding-right":"15%",
+						"line-height":"1em",
+					});
+					
+					//add image icon
+					var $iconElement = $(document.createElement("img"));
+					$dayContainer.append($iconElement);
+					$iconElement.attr({
+						"src": data.forecast.simpleforecast.forecastday[day].icon_url,
+						"alt": data.forecast.simpleforecast.forecastday[day].icon,
+					});
+					$iconElement.css({
+						"font-size": "2em",
+						"display":"inline",
+						"padding-right":"10%",
+						"line-height":"1em",
+					});
+
+
+					var $conditions = $(document.createElement("p"));
+					$dayContainer.append($conditions);
+					$conditions.append(forecastday[day].conditions);
+
+					$conditions.css({
+						"font-size": "2em",
+						"display":"inline",
+						"padding-right":"10%",
+						"line-height":"1em",
+					});
+
+					var $wind = $(document.createElement("p"));
+					$dayContainer.append($wind);
+					$wind.append(forecastday[day].avewind.dir + " " +forecastday[day].avewind.mph);
+
+					$wind.css({
+						"font-size": "2em",
+						"display":"inline",
+						"padding-right":"10%",
+						"line-height":"1em",
+						
+					});
+
+				} 
+
+			});
+		}
+		
+		makeAjaxRequest();
+	</script>
+</body>
+</html>
+
+
+
