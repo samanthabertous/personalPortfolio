@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+  <canvas id="my_canvas"></canvas>
+  <script type="text/javascript">
+
+    var canvas = null;
+    var ctx = null;
+    // how fast the images will animate
+    var frameRate = 1000/10;
+    var frame = 0;
+    var assets = ['images/1.jpg',
+                  'images/2.jpg',
+                  'images/3.jpg',
+                  'images/4.jpg',
+                  'images/5.jpg',
+                  'images/6.jpg',
+                  'images/7.jpg',
+                  'images/8.jpg'
+                 ];
+    var frames = [];
+
+    var onImageLoad = function(){
+        console.log("IMAGE!!!");
+    };
+
+    var setup = function() {
+      canvas = document.getElementById('my_canvas');
+      ctx = canvas.getContext('2d');
+      
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+
+      for (var i = 0; i < assets.length; i++){
+        frames.push(new Image());
+        frames[i].onload = onImageLoad;
+        frames[i].src = assets[i];
+      }
+      setInterval(animate, frameRate);
+
+    };
+
+    var animate = function(){
+      ctx.clearRect(0,0,canvas.width, canvas.height);
+      ctx.drawImage(frames[frame], 192, 192),
+      frame = (frame + 1) % frames.length;
+        // % frames.length avoids having to write an if statement
+    };
+  
+   setup();
+
+      </script>
+</body>
+</html>
+
+

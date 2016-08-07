@@ -1,0 +1,78 @@
+[
+  {
+    "bio" : {
+      "name": "Samantha Bretous",
+      "role": "Web Development Professional",
+      "contact": {
+      "moblie": "(817) 845-5478",
+      "email": "sam@samanthabretous.com",
+      "github":"https://github.com/samanthabretous",
+      "twitter": "https://twitter.com/samanthabretous",
+      "location": "New York, NY"
+    },
+      "picture": "",
+      "age": 26, 
+      "languages": ["HTML", "SASS", "JavaScript", "PHP"]
+  },
+
+    "jobs" : [
+      {
+        "company": "Certified Graphics" ,
+        "title": "Lead Estimator / Project Manager",
+        "years": "January 2014 – April 2016",
+        "location": "New York, NY",
+        "description": [
+          "Introduced new technology within the company to allow a more efficient workplace",
+          "Provide pricing proposals for clients and meet required deadlines for bids ",
+          "Manage projects while clearly commutating with the production team the needs of the clients"
+        ]
+      },
+      {
+        "company": "Caroline’s on Broadway",
+        "title": "Office Assistant",
+        "years": "July 2013 – June 2014",
+        "location": "New York, NY",
+        "description": [
+          "Execute empathic communication with customers and wait staff",
+          "Processed client orders to establish ticket sales",
+          "Provided exceptional consumer satisfaction thought customer interactions and assisted with inquires"
+        ]
+      },
+      {
+        "company": "National Recycling Solutions",
+        "title": "Office Assistant/ Dispatch",
+        "years": "May 2012 – April 2013 ",
+        "location": "Irving, Texas",
+        "description": [
+          "Collaborated internally with coordinators, as well as communicated progress externally with customers",
+          "Executed the scheduling of all pick ups",
+          "Oversaw drivers and prepare required paperwork"
+        ]
+      },
+      {
+        "company": "Baylor University Theatre Department",
+        "title": "Assistant Scenic Designer",
+        "years": "August 2010 – May 2012",
+        "location": "Waco, Texas",
+        "description": [
+          "Assisted in the research and design of sets for multiply theatre productions",
+          "Worked alongside the technical director, master carpenter, and scenic designer to ensure the final design is accomplished successfully within a deadline",
+          "Delegated work assignments to multiple students and coordinated the painting production schedule"
+        ]
+      }
+    ]
+  },
+  {
+    "education" : [
+      {
+      "bachlorDegree":{
+        "school": "Baylor University",
+        "location": "Waco, Texas",
+        "major": "Theatre Design",
+        "minor": "Art",
+        "graduatedYear": 2012
+      },
+      "webCourse": ["Codecademy", "SVA JavaScript"]
+    ]
+  }
+]
