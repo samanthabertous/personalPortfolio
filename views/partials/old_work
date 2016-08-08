@@ -1,0 +1,47 @@
+<section class = "work_section">
+  <a name="work" class="hidden-link">
+
+  <h1 class="work_title1">Frontend Development</h1>
+  <div id="front_work">
+    
+    <% 
+    console.log(projects)
+    for (project as $projects){
+      console.log(project)
+      # echo '<div class=front_image>';
+      # echo '<a target="_blank" href='. $project['href'] .'>';
+      # echo '<img src=' . $project['src'] . ' alt=' . $project['alt'] . '/>';
+      # echo '</a>';
+      # echo '<p>'.$project['name'].'</p>';
+      # echo '</div>';
+    }
+
+    %>
+     
+  </div> 
+
+
+
+  <h1 class="work_title2">Graphic Design</h1>
+  <div id="graphic_work">
+    
+<!--     <?php 
+
+    //foreach($graphicsGallery as $project){
+
+      // echo '<div class="graphic_image">';
+      // echo '<a href='. $project['href'] .'>';
+      // echo '<img src=' . $project['src'] . ' alt=' . $project['alt'] . '/>';
+      // echo '</a>';
+      // echo '<p class="imgDescription">'.$project['name'].'</p>';
+      // echo '</div>';
+    }
+
+    ?>  -->
+
+  </div>
+
+      <!--<button id= "github_button"><a href="https://github.com/samanthabertous"target="_blank">LOOK AT MY CODE</a></button>-->
+
+    </section>
+

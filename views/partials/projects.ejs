@@ -1,0 +1,40 @@
+<section class = "work_section">
+  <a name="work" class="hidden-link">
+
+  <h1 class="work_title1">Frontend Development</h1>
+  <div id="front_work">
+    
+    <% for (project in web_projects){ %>
+    <div class="front_image">
+      <a target="_blank" href="<%= web_projects[project].href %>">
+        <img src="<%= web_projects[project].src %>" alt="<%= web_projects[project].alt %>" >
+      </a>
+      <p> <%= web_projects[project].name %> </p>
+    </div>
+    <% } %>
+     
+  </div> 
+
+  <h1 class="work_title2">Graphic Design</h1>
+  <div id="graphic_work">
+
+
+    <% for (project in graphic_projects){ %>
+
+      <div class="graphic_image">'
+        <a href="<%= graphic_projects[project].href %>">
+          <img src="<%= graphic_projects[project].src %>" alt="<%= graphic_projects[project].alt %>" >
+        </a>
+        <p class="imgDescription"> <%= graphic_projects[project].name %></p>;
+      </div>
+
+
+    <% } %>
+
+  </div>
+
+
+      <!--<button id= "github_button"><a href="https://github.com/samanthabertous"target="_blank">LOOK AT MY CODE</a></button>-->
+
+</section>
+
